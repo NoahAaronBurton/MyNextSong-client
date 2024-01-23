@@ -6,6 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const Header = () => {
   return (
@@ -24,13 +26,27 @@ function App() {
     <Container>
       <Header />
       <Row>
-        <Col xs={12} md={8}>
-          {/* Content goes here */}
-
+        <Col xs={12} md={4} order={1}>
+          <Card>
+            <Card.Body>
+              <Card.Title>Side Content</Card.Title>
+              <Card.Text>
+                This is some text within a card body.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
         </Col>
-        <Col xs={6} md={4}>
-          {/* Content goes here */}
-
+        <Col xs={12} md={8} order={0}>
+          <Card>
+            <Card.Body>
+              <Card.Title>Main Content</Card.Title>
+              <Card.Text>
+                This is some text within a card body.
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
