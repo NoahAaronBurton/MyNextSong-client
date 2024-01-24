@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
@@ -42,7 +44,9 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+  <GoogleOAuthProvider clientId='272155549288-5m0eal6p2p7ufof91m71sb3ijcqkkasp.apps.googleusercontent.com'>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>,
+  </GoogleOAuthProvider>
 )
