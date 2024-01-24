@@ -14,10 +14,10 @@ import Button from 'react-bootstrap/Button';
 const Header = () => {
   return (
     <Navbar >
-      <Navbar.Brand href="#home">My Next Song</Navbar.Brand>
+      <Navbar.Brand href="">My Next Song</Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#features">Sign In</Nav.Link>
+        <Nav.Link href="">Home</Nav.Link>
+        <Nav.Link href="">Sign In</Nav.Link>
       </Nav>
     </Navbar>
   );

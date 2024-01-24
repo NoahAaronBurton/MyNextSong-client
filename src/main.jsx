@@ -11,6 +11,7 @@ import ErrorPage from './error-page.jsx';
 
 import Home from "./routes/home.jsx";
 import Landing from "./routes/landing";
+import Signup from "./routes/signup.jsx";
 
 import './index.css'
 
@@ -25,6 +26,16 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/:catchAll",
+    element: <ErrorPage />,
     errorElement: <ErrorPage />,
   },
 ]);
