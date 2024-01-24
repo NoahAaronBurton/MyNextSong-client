@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
@@ -7,7 +9,8 @@ import {
 
 import ErrorPage from './error-page.jsx';
 
-import Root from "./routes/root";
+import Home from "./routes/home.jsx";
+import Landing from "./routes/landing";
 
 import './index.css'
 
@@ -15,9 +18,14 @@ import './index.css'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Landing />, 
     errorElement: <ErrorPage />,
     
+  },
+  {
+    path: "/home",
+    element: <Home />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

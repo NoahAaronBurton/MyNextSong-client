@@ -1,5 +1,5 @@
 // import { Outlet } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 import Container from 'react-bootstrap/Container';
@@ -24,7 +24,7 @@ const Header = () => {
 }
 
   
-  export default function Root() {
+export default function Home() {
 
     return (
       <Container>
