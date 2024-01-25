@@ -12,11 +12,13 @@ const Header = () => {
       <Navbar.Brand href="">My Next Song</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="">Home</Nav.Link>
-        <Nav.Link href="">Sign In</Nav.Link>
+        <Nav.Link href="">Sign Out</Nav.Link>
       </Nav>
     </Navbar>
   );
 }
+
+//todo: sign out function
 
 export default function Home() {
   return (

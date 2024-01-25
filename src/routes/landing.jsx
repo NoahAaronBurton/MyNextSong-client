@@ -25,7 +25,7 @@ export default function Landing() {
                             <Link to="/login">Log In</Link>
                         </Button>
                         <Button variant="primary" className="m-2">
-                            <Link to="/signup">Create an account</Link>
+                            <Link to="/login">Create an account</Link>
                         </Button>
                         
                     </Card.Body>

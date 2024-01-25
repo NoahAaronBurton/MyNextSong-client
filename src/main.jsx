@@ -13,7 +13,7 @@ import ErrorPage from './error-page.jsx';
 
 import Home from "./routes/home.jsx";
 import Landing from "./routes/landing";
-import Signup from "./routes/signup.jsx";
+import Login from "./routes/login.jsx";
 
 import './index.css'
 
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/signup",
-    element: <Signup />,
+    path: "/login",
+    element: <Login />,
     errorElement: <ErrorPage />,
   },
   {
