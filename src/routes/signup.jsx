@@ -6,19 +6,26 @@ import Form  from 'react-bootstrap/Form';
 import Button  from 'react-bootstrap/Button';
 
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 import { GoogleLogin } from '@react-oauth/google';
 
 export default function Signup() {
+    const navigate = useNavigate();
 
     const responseMessage = (response) => {
         console.log(response.credential);
 
-        //todo: send response to backend
+        
         axios.post('http://localhost:3000/api/auth/google', { token: response.credential })
-        .then(res => console.log(res.data))
+        .then(res => {
+            console.log(res.data);
+            navigate('/home');  // Redirect to '/home'
+        })
         .catch(err => console.error(err));
+
+
     };
     const errorMessage = (error) => {
         console.log(error);
