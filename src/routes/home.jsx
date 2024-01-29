@@ -6,21 +6,61 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+import {useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 const Header = () => {
+  const navigate = useNavigate();
+
+  const logout = async () => {
+    try {
+      const url = `${import.meta.env.VITE_API_URL}/auth/logout`;
+      await axios.get(url, {withCredentials: true});
+      console.log('logged out');
+      navigate('/login'); 
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   return (
     <Navbar>
       <Navbar.Brand href="">My Next Song</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="">Home</Nav.Link>
-        <Nav.Link href="">Sign Out</Nav.Link>
+        <Nav.Link onClick={logout}>Sign Out</Nav.Link>
       </Nav>
     </Navbar>
   );
 }
 
-//todo: sign out function
-
 export default function Home() {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  // get user info from server
+  const getUser = async () => {
+    try {
+      const url = `${import.meta.env.VITE_API_URL}/auth/login/success`;
+      const {data} = await axios.get(url, {withCredentials: true});
+      setUser(data.user._json);
+      console.log(data);
+      console.log(data.user._json);
+    } catch (err) {
+      console.error(err);
+      navigate('/login');
+    }
+  }
+  useEffect(() => {
+    getUser();
+    // if (!user) {
+    //   navigate('/login');
+    // }
+  
+  }, []);
+
+
   return (
     <Container>
       <Header />
@@ -28,9 +68,9 @@ export default function Home() {
         <Col xs={12}>
           <Card>
             <Card.Body>
-              <Card.Title>Account Info</Card.Title>
+              <Card.Title>{user ? user.name : 'no user'}</Card.Title>
               <Card.Text>
-                This is some text within a card body.
+                
               </Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>

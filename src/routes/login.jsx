@@ -4,8 +4,6 @@ import Button  from 'react-bootstrap/Button';
 
 export default function Login() {
 
-    //todo: use api endpoints for user auth status, info, etc
-
     const googleAuth = () => {
         window.open(`${import.meta.env.VITE_API_URL}/auth/google/callback`, '_self');
     }
@@ -16,7 +14,7 @@ export default function Login() {
                 {/* Google auth here */}
                 <h1>Google stuff!</h1>
                 <br />
-                <Button onClick={googleAuth}>Google Auth</Button>
+                <Button onClick={googleAuth}>Log In with your Google Account</Button>
             </Row>
         </Container>
     )
